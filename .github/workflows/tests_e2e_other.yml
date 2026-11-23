@@ -129,9 +129,11 @@ jobs:
       - name: Setup Environment for Screen Recording
         # guidepup/setup-action is archived and its README points at this CLI.
         # 0.23.0 is the CLI release that action v0.21.0 shipped with.
+        # The CLI exits 1 when it cannot finish the setup. `|| true` keeps
+        # that out of the run annotations, as it was with the action.
         # https://github.com/guidepup/setup/releases
         continue-on-error: true
-        run: npx --yes @guidepup/setup@0.23.0 --ci --record
+        run: npx --yes @guidepup/setup@0.23.0 --ci --record || true
 
       - name: Upload Screen Recording Environment Setup
         # https://github.com/actions/upload-artifact/releases

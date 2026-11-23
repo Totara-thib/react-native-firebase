@@ -43,7 +43,6 @@ on:
   push:
     branches:
       - main
-      - tmp-ci-run
       - release-v*
     paths:
       - 'packages/app/package.json'

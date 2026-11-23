@@ -12,7 +12,6 @@ on:
   push:
     branches:
       - main
-      - tmp-ci-run
       - release-v*
     paths-ignore:
       - 'docs/**'
